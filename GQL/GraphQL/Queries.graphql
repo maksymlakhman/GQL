@@ -1,0 +1,30 @@
+query GetMovies {
+  getMovies {
+    title
+    cast
+    directors
+    fullplot
+    plot
+    countries
+  }
+}
+
+
+query GetUserById($getUserByIdId: ID) {
+  getUserById(id: $getUserByIdId) {
+    _id
+    name
+    email
+    password
+  }
+}
+
+
+mutation UpdateUserPassword($updateUserPasswordId: ID, $newPassword: String) {
+  updateUserPassword(id: $updateUserPasswordId, newPassword: $newPassword) {
+    _id
+    name
+    email
+    password
+  }
+}

@@ -1,0 +1,27 @@
+type Movie {
+  title: String!
+  plot: String!
+  fullplot: String
+  cast: [String!]!
+  directors: [String!]!
+  countries: [String!]!
+}
+
+type Query {
+  getMovies: [Movie]
+  getUserById(id: ID): User
+  getUserList: [User]
+}
+
+type User {
+  _id: ID
+  name: String
+  email: String
+  password: String
+}
+
+type Mutation {
+  deleteUserById(id: ID): User
+  updateUserPassword(id: ID, newPassword: String): User
+}
+
